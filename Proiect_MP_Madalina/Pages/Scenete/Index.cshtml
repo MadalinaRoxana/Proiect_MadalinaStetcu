@@ -1,0 +1,72 @@
+﻿@page
+@model Proiect_MP_Madalina.Pages.Scenete.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Sceneta[0].Sceneta_denumire)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sceneta[0].Sceneta_categorie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sceneta[0].Sceneta_varsta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sceneta[0].Autor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sceneta[0].Teatru)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sceneta[0].Sceneta_data)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sceneta[0].Sceneta_pret)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Sceneta) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sceneta_denumire)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sceneta_categorie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sceneta_varsta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Autor.Autor_Nume)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Teatru.Teatru_Denumire)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sceneta_data)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sceneta_pret)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

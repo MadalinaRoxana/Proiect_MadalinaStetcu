@@ -1,0 +1,62 @@
+﻿@page
+@model Proiect_MP_Madalina.Pages.Scenete.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>Sceneta</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Sceneta.Sceneta_denumire" class="control-label"></label>
+                <input asp-for="Sceneta.Sceneta_denumire" class="form-control" />
+                <span asp-validation-for="Sceneta.Sceneta_denumire" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sceneta.Sceneta_categorie" class="control-label"></label>
+                <input asp-for="Sceneta.Sceneta_categorie" class="form-control" />
+                <span asp-validation-for="Sceneta.Sceneta_categorie" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sceneta.Sceneta_varsta" class="control-label"></label>
+                <input asp-for="Sceneta.Sceneta_varsta" class="form-control" />
+                <span asp-validation-for="Sceneta.Sceneta_varsta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sceneta.AutorID" class="control-label"></label>
+                <select asp-for="Sceneta.AutorID" class ="form-control" asp-items="ViewBag.AutorID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sceneta.TeatruID" class="control-label"></label>
+                <select asp-for="Sceneta.TeatruID" class ="form-control" asp-items="ViewBag.TeatruID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sceneta.Sceneta_data" class="control-label"></label>
+                <input asp-for="Sceneta.Sceneta_data" class="form-control" />
+                <span asp-validation-for="Sceneta.Sceneta_data" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sceneta.Sceneta_pret" class="control-label"></label>
+                <input asp-for="Sceneta.Sceneta_pret" class="form-control" />
+                <span asp-validation-for="Sceneta.Sceneta_pret" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
